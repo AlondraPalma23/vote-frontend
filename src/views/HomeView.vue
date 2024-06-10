@@ -9,7 +9,7 @@
             <p>A continuación, encontrarás algunas instrucciones para comenzar:</p>
             <ul>
                 <li>Asegúrate de colocar correctamente tu clave de elector.</li>
-                <li>Verifica tu seccióna la que perteneces y tu entidad.</li>
+                <li>Verifica tu sección a la que perteneces y tu entidad.</li>
                 <li>Selecciona tu candidato preferido y emite tu voto.</li>
             </ul>
             <p>Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos.</p>

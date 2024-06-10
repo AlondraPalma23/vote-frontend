@@ -52,7 +52,7 @@ export default {
                 const formData = {
                     claveElec: this.claveElector,
                     seccion: this.seccion,
-                    entidad: this.entidadSeleccionada // Envía el ID de la entidad seleccionada
+                    id_estado: this.entidadSeleccionada // Envía el ID de la entidad seleccionada
                 };
                 localStorage.setItem('claveElec', this.claveElector);
                 localStorage.setItem('seccion', this.seccion);

@@ -19,6 +19,19 @@ const routes = [
     path: '/Resultados',
     name: 'Resultados',
     component: () => import('../views/ResultadosView.vue')
+  },
+  //solo para checar como se ve la vista del funcionario Y EL LOGIN
+  {
+    path: '/FuncionarioLogin',
+    name: 'FuncionarioLogin',
+    component: () => import('../views/FuncionarioLog.vue')
+  },
+
+
+  {
+    path: '/FuncionarioVista',
+    name: 'FuncionarioVista',
+    component: () => import('../components/Funcionario.vue')
   }
 ]
 

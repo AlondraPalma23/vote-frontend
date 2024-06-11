@@ -2,7 +2,7 @@
   <div class="container mt-4">
     <h2>Resultados de votación por candidato</h2>
     <div class="row">
-      <canvas id="votesChart"></canvas>
+      <canvas id="votesChart" class="chart-background"></canvas>
     </div>
   </div>
 </template>
@@ -15,8 +15,8 @@ export default {
   data() {
     return {
       votesData: [],
-      url: process.env.VUE_APP_API_URL, // Asignación correcta dentro de data()
-      chart: null // Variable para almacenar la instancia del gráfico
+      url: process.env.VUE_APP_API_URL,
+      chart: null
     };
   },
   methods: {
@@ -24,20 +24,19 @@ export default {
       const url = `${this.url}/votes_per_candidate`;
       fetch(url, {
         headers: {
-          
           'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json'
         }
       })
         .then(response => {
           if (!response.ok) {
-        throw new Error('Network response was not ok');
+            throw new Error('Network response was not ok');
           }
           return response.json();
         })
         .then(data => {
           this.votesData = data.data;
-          console.log(this.votesData)
+          console.log(this.votesData);
           this.updateChart();
         })
         .catch(error => {
@@ -45,17 +44,14 @@ export default {
         });
     },
     updateChart() {
-      // Obtener los nombres de los candidatos y los totales de votos
       const labels = this.votesData.map(candidate => candidate.nombre);
       const data = this.votesData.map(candidate => candidate.total);
 
       if (this.chart) {
-        // Si el gráfico ya existe, actualiza sus datos
         this.chart.data.labels = labels;
         this.chart.data.datasets[0].data = data;
         this.chart.update();
       } else {
-        // Crear un nuevo gráfico
         const ctx = document.getElementById('votesChart').getContext('2d');
         this.chart = new Chart(ctx, {
           type: 'bar',
@@ -87,5 +83,7 @@ export default {
 </script>
 
 <style>
-/* Estilos opcionales para personalizar */
+.chart-background {
+  background-color: white;
+}
 </style>

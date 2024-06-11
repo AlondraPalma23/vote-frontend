@@ -14,7 +14,7 @@
         </div>
         <div class="buttons">
             <button class="accept" @click="acceptSelection">Aceptar</button>
-            <button class="cancel" @click="deselectCandidate">Anular mi Voto</button>
+            <button class="cancel" @click="deselectCandidate">Borrar Voto</button>
         </div>
     </div>
 </template>
